@@ -1,16 +1,12 @@
 ﻿// 太空任务调度员 - 介绍页脚本
-// 下载按钮：等用户给 GitHub Release URL 后替换 downloadUrl
-const downloadUrl = '';
+// 下载按钮：直接下载同目录下的安装包 EXE
+// 以后传到 GitHub Pages 时，把下面改成 Release 完整 URL 即可
+const downloadUrl = '太空任务调度员_安装包.exe';
+
 document.addEventListener('DOMContentLoaded', () => {
   const dlBtn = document.getElementById('dlBtn');
   if (dlBtn) {
-    dlBtn.addEventListener('click', (e) => {
-      if (!downloadUrl) {
-        e.preventDefault();
-        alert('下载链接待替换：把 GitHub Release 的安装包 URL 填到 script.js 顶部的 downloadUrl 即可');
-      } else {
-        dlBtn.href = downloadUrl;
-      }
-    });
+    dlBtn.href = downloadUrl;
+    dlBtn.setAttribute('download', '太空任务调度员_安装包.exe');
   }
 });
